@@ -79,8 +79,10 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```
 
-The p-values from these tests are extremely low, so we can confidently reject the null hypothesis. Furthermore, the odds ratio quantifies what has been alluded to in the graphical and numerical results, that a drug user who took the drug is only 35.4128% as likely to contract AIDS as a drug user who had taken placebo.
+The p-values from these tests are extremely low, so we can confidently reject the null hypothesis. Furthermore, the odds ratio, 0.3534128, quantifies what has been alluded to in the graphical and numerical results, that a drug user who took the drug is only 35.4128% as likely to contract AIDS as a drug user who had taken placebo.
 
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+
+From the above results we can conclude that the drug triUmp significantly lowers the chances of contracting AIDS for drug users; those drug users who take the drug are only 35.4128% as likely to contract AIDS as those who had taken placebo. Therefore, if a drug user wishes to avoid contracting AIDS, that drug user should take the drug. However, the drug might not work for everyone, since these results only apply to a generalized group of drug users; other factors might affect the drug's efficacy.

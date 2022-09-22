@@ -46,6 +46,13 @@ To analyze the results, we should use a graphical method, and a numerical method
 ### Graphical Descriptive Results
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question. Bottom line is to explain the features of the graph that are relevant to conforming or departing to what is expected by your null hypothesis !-->
+```{r}
+barchartGC(~infected + treatment,data=ABadTime)
+barchartGC(~infected + treatment,data=ABadTime, type="percent")
+
+```
+
+According to these results, nearly 80% of those who had contracted AIDS had only received placebo, while those who took the drug only make up little more than 20% of those who contracted AIDS. This would suggest that the drug is effective for drug users.
 
 ### Numerical Descriptive Results
 

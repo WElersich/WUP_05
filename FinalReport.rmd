@@ -20,6 +20,22 @@ A new  preventative aides drug (triUmpsal) is under test in clinical trials. Con
 # Methods
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method. Discuss what data manipulations may be needed for example subsetting or other binning procedures and what sort of graphical displays and inferential tools will be used!-->
+First, looking at the data:
+
+```{R}
+dim(triUmp)
+names(triUmp)
+```
+Here we are explaining a categorical variable by a another, distinct, categorical variable. We should thus use methods listed in the cat_cat file to determine the relationship between these variables. We should remove all cases who are not drug users, and then only select the variables needed to answer our question. We should also convert all character variables to factor variables, to make working with these variables easier. The helper file MyTricks contains a code snippet that can be modified to do exactly what we want.
+
+```{r}
+ABadTime <- filter(triUmp, DrugUser == "yes") %>%
+  select(X, treatment, infected) %>%
+  mutate(across(where(is.character), as.factor)) %>%
+  arrange(desc(infected)) 
+head(ABadTime, 10)
+```  
+To analyze the results, we should use a graphical method, and a numerical method, both from Cat_Cat. The graphical method we will use is the boxplot, and the numerical method is the "Numeric Summaries" snippet from Cat_Cat, which will give two tables which show the percentages of our target population who fall into the categories we are trying to find a relationship between.
 
 # Results
 

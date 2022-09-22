@@ -20,6 +20,10 @@ A new  preventative aides drug (triUmpsal) is under test in clinical trials. Con
 # Methods
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method. Discuss what data manipulations may be needed for example subsetting or other binning procedures and what sort of graphical displays and inferential tools will be used!-->
+H_0: There is no statistical relationship between treatment and contracting AIDS.
+
+H_1: Receiving the drug triuMpsal reduces the likelyhood of contracting AIDS.
+
 First, looking at the data:
 
 ```{R}
@@ -35,7 +39,7 @@ ABadTime <- filter(triUmp, DrugUser == "yes") %>%
   arrange(desc(infected)) 
 head(ABadTime, 10)
 ```  
-To analyze the results, we should use a graphical method, and a numerical method, both from Cat_Cat. The graphical method we will use is the boxplot, and the numerical method is the "Numeric Summaries" snippet from Cat_Cat, which will give two tables which show the percentages of our target population who fall into the categories we are trying to find a relationship between.
+To analyze the results, we should use a graphical method, and a numerical method, both from Cat_Cat. The graphical method we will use is the boxplot, and the numerical method is the "Numeric Summaries" snippet from Cat_Cat, which will give two tables which show the percentages of our target population who fall into the categories we are trying to find a relationship between. Finally, we should conduct the Chi-squared test and the fisher test to determine the likelyhood of the null hypothesis being true.
 
 # Results
 
@@ -57,6 +61,13 @@ According to these results, nearly 80% of those who had contracted AIDS had only
 ### Numerical Descriptive Results
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
+
+```{r}
+table1 <- xtabs(~infected + treatment,data=ABadTime)
+rowPerc(table1)
+colPerc(table1)
+```
+Just like in our graphical results, we can see that 24.29% of those who contracted AIDS had taken the drug, while 75.51% of those who had contracted AIDS were on placebo. Furthermore, 2.89% of those who had taken the drug contracted AIDS, which is less than half of the percentage of those who took placebo who contracted AIDS, at 7.77%. So long as the null hypothesis is false, we can confidently say that the drug reduces the probability of contracting AIDS.
 
 ## Inferential Results
 

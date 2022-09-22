@@ -67,7 +67,7 @@ table1 <- xtabs(~infected + treatment,data=ABadTime)
 rowPerc(table1)
 colPerc(table1)
 ```
-Just like in our graphical results, we can see that 24.29% of those who contracted AIDS had taken the drug, while 75.51% of those who had contracted AIDS were on placebo. Furthermore, 2.89% of those who had taken the drug contracted AIDS, which is less than half of the percentage of those who took placebo who contracted AIDS, at 7.77%. So long as the null hypothesis is false, we can confidently say that the drug reduces the probability of contracting AIDS.
+Just like in our graphical results, we can see that 24.29% of those who contracted AIDS had taken the drug, while 75.51% of those who had contracted AIDS were on placebo. Furthermore, 2.89% of those who had taken the drug contracted AIDS, which is less than half of the percentage of those who took placebo who contracted AIDS, at 7.77%. So long as the null hypothesis is false, we can confidently say that the drug reduces the probability of contracting AIDS for drug users.
 
 ## Inferential Results
 

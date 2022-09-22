@@ -39,7 +39,7 @@ ABadTime <- filter(triUmp, DrugUser == "yes") %>%
   arrange(desc(infected)) 
 head(ABadTime, 10)
 ```  
-To analyze the results, we should use a graphical method, and a numerical method, both from Cat_Cat. The graphical method we will use is the boxplot, and the numerical method is the "Numeric Summaries" snippet from Cat_Cat, which will give two tables which show the percentages of our target population who fall into the categories we are trying to find a relationship between. Finally, we should conduct the Chi-squared test and the fisher test to determine the likelyhood of the null hypothesis being true.
+To analyze the results, we should use a graphical method, and a numerical method, both from Cat_Cat. The graphical method we will use is the boxplot, and the numerical method is the "Numeric Summaries" snippet from Cat_Cat, which will give two tables which show the percentages of our target population who fall into the categories we are trying to find a relationship between. Finally, we should conduct the Chi-squared test and the fisher test, both of which can be found in Cat_Cat, to determine the likelyhood of the null hypothesis being true.
 
 # Results
 
@@ -73,6 +73,13 @@ Just like in our graphical results, we can see that 24.29% of those who contract
 
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
 
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+The p-values from these tests are extremely low, so we can confidently reject the null hypothesis. Furthermore, the odds ratio quantifies what has been alluded to in the graphical and numerical results, that a drug user who took the drug is only 35.4128% as likely to contract AIDS as a drug user who had taken placebo.
 
 # Discussion and Conclusion
 
